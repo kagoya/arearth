@@ -8,3 +8,5 @@
 - **Earth imagery**: NASA Earth imagery as distributed in Three.js example texture `earth_atmos_2048.jpg`. https://github.com/mrdoob/three.js/blob/master/examples/textures/planets/earth_atmos_2048.jpg
 
 Country/region boundaries are simplified display data. Capital and landmark coordinates are approximate representative locations.
+
+- **flag-icons 7.5.0**: MIT License, copyright flag-icons contributors. https://github.com/lipis/flag-icons — flag SVGs rasterized into `assets/flags.png`; ISO alpha-2 mapping from Natural Earth. See `licenses/flag-icons.txt`. Source archive: https://github.com/lipis/flag-icons/tree/v7.5.0
