@@ -10,3 +10,9 @@
 Country/region boundaries are simplified display data. Capital and landmark coordinates are approximate representative locations.
 
 - **flag-icons 7.5.0**: MIT License, copyright flag-icons contributors. https://github.com/lipis/flag-icons — flag SVGs rasterized into `assets/flags.png`; ISO alpha-2 mapping from Natural Earth. See `licenses/flag-icons.txt`. Source archive: https://github.com/lipis/flag-icons/tree/v7.5.0
+
+## Tourism and World Heritage facts (2026-10-24 snapshot)
+
+Tourism facts and Japanese labels are derived from Wikidata and Detourmap Places (CC0): https://github.com/Flightmussy/detourmap-places and https://www.wikidata.org/wiki/Wikidata:Licensing . No source photographs or article descriptions are included.
+
+World Heritage registration IDs, official English names, years, categories and component coordinates are from UNESCO's official WHC001 open-data catalogue: https://data.unesco.org/explore/dataset/whc001/ . Japanese display labels are from Wikidata, not official UNESCO translations. No UNESCO logo, photos or explanatory articles are included. See DATA_SOURCES.md for per-dataset selection and coordinate fallbacks.

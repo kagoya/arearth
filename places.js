@@ -1,5 +1,7 @@
-import {countries} from './countries.js?v=surface-4';
-export const points = [
+import {countries} from './countries.js?v=7';
+import {tourismData} from './tourism-data.js?v=7';
+import {heritageData} from './heritage-data.js?v=7';
+const capitals = [
 ['tokyo','東京','日本','Tokyo Japan Nippon とうきょう にほん','capital',35.6762,139.6503,'日本の首都。東アジア、日本列島の本州に位置します。'],
 ['seoul','ソウル','韓国','Seoul Korea そうる かんこく','capital',37.5665,126.9780,'朝鮮半島の北西部、漢江沿いに位置する首都。'],
 ['beijing','北京','中国','Beijing China ぺきん ちゅうごく','capital',39.9042,116.4074,'中国北部に位置する首都。故宮や天安門で知られます。'],
@@ -25,30 +27,17 @@ export const points = [
 ['buenosaires','ブエノスアイレス','アルゼンチン','Buenos Aires Argentina ぶえのすあいれす','capital',-34.6037,-58.3816,'ラプラタ川の河口に面するアルゼンチンの首都。'],
 ['canberra','キャンベラ','オーストラリア','Canberra Australia きゃんべら','capital',-35.2809,149.1300,'シドニーとメルボルンの間の内陸部に位置する首都。'],
 ['wellington','ウェリントン','ニュージーランド','Wellington New Zealand うぇりんとん','capital',-41.2865,174.7762,'ニュージーランド北島の南端に位置する首都。'],
-['fuji','富士山','日本','Mount Fuji ふじさん 静岡 山梨','landmark',35.3606,138.7274,'本州にそびえる標高3,776mの火山。日本を代表する山です。'],
-['kyoto','清水寺','日本','Kiyomizu dera Kyoto きよみずでら 京都 きょうと','landmark',34.9949,135.7850,'京都の東山にある寺院。「清水の舞台」で知られます。'],
-['wall','万里の長城（八達嶺）','中国','Great Wall Badaling ばんりのちょうじょう','landmark',40.3596,116.0200,'中国北部に連なる城壁のうち、北京近郊の八達嶺を表示。'],
-['taj','タージ・マハル','インド','Taj Mahal Agra たーじまはる','landmark',27.1751,78.0421,'インド北部のアーグラにある白大理石の霊廟。'],
-['angkor','アンコール・ワット','カンボジア','Angkor Wat Cambodia あんこーるわっと','landmark',13.4125,103.8670,'シェムリアップ近郊にあるクメール王朝の寺院遺跡。'],
-['eiffel','エッフェル塔','フランス','Eiffel Tower Paris えっふぇるとう パリ','landmark',48.8584,2.2945,'パリのセーヌ川近くに立つ鉄塔。'],
-['colosseum','コロッセオ','イタリア','Colosseum Rome ころっせお ローマ','landmark',41.8902,12.4922,'ローマに残る古代ローマ時代の円形闘技場。'],
-['sagrada','サグラダ・ファミリア','スペイン','Sagrada Familia Barcelona さぐらだふぁみりあ バルセロナ','landmark',41.4036,2.1744,'バルセロナにある、ガウディが設計を担った聖堂。'],
-['bigben','ビッグ・ベン','イギリス','Big Ben London びっぐべん ロンドン','landmark',51.5007,-0.1246,'ロンドンの国会議事堂にある時計塔の大鐘。ここでは時計塔の位置を表示。'],
-['giza','ギザのピラミッド','エジプト','Giza Pyramids ぎざ ぴらみっど','landmark',29.9792,31.1342,'カイロ近郊にある古代エジプトのピラミッド群。'],
-['petra','ペトラ遺跡','ヨルダン','Petra Jordan ぺとら','landmark',30.3285,35.4444,'ヨルダン南部の岩山に築かれた古代都市遺跡。'],
-['burj','ブルジュ・ハリファ','アラブ首長国連邦','Burj Khalifa Dubai UAE ドバイ ぶるじゅ','landmark',25.1972,55.2744,'ドバイにそびえる超高層ビル。'],
-['liberty','自由の女神','アメリカ','Statue of Liberty New York NYC じゆうのめがみ ニューヨーク','landmark',40.6892,-74.0445,'ニューヨーク湾のリバティ島に立つ像。'],
-['grandcanyon','グランドキャニオン','アメリカ','Grand Canyon Arizona ぐらんどきゃにおん','landmark',36.0600,-112.1070,'コロラド川が刻んだ大峡谷。サウスリムの代表地点を表示。'],
-['machu','マチュ・ピチュ','ペルー','Machu Picchu Peru まちゅぴちゅ','landmark',-13.1631,-72.5450,'アンデス山中にあるインカ帝国の都市遺跡。'],
-['christ','コルコバードのキリスト像','ブラジル','Christ Redeemer Rio de Janeiro きりすと リオデジャネイロ','landmark',-22.9519,-43.2105,'リオデジャネイロのコルコバードの丘に立つキリスト像。'],
-['opera','シドニー・オペラハウス','オーストラリア','Sydney Opera House しどにー おぺらはうす','landmark',-33.8568,151.2153,'シドニー湾に面した、帆のような屋根を持つ劇場。'],
-['uluru','ウルル','オーストラリア','Uluru Ayers Rock うるる エアーズロック','landmark',-25.3444,131.0369,'オーストラリア中央部にある、先住民アナングの聖地。'],
-['kilimanjaro','キリマンジャロ','タンザニア','Kilimanjaro Tanzania きりまんじゃろ','landmark',-3.0674,37.3556,'アフリカ最高峰の山。タンザニア北東部に位置します。'],
-['iguazu','イグアスの滝','アルゼンチン／ブラジル','Iguazu Falls いぐあす','landmark',-25.6953,-54.4367,'アルゼンチンとブラジルの国境に広がる滝群。代表地点を表示。'],
-['tablemountain','テーブルマウンテン','南アフリカ','Table Mountain Cape Town てーぶるまうんてん ケープタウン','landmark',-33.9628,18.4098,'ケープタウンを見下ろす、頂上が平らな山。代表地点を表示。'],
-['moai','イースター島（モアイ）','チリ','Easter Island Rapa Nui Moai もあい','landmark',-27.1258,-109.2773,'南太平洋のラパ・ヌイ島。アフ・トンガリキの位置を表示。']
 ].map(([id,name,country,aliases,type,lat,lon,description])=>({id,name,country,aliases,type,lat,lon,description}));
-export const places=[...countries.map(p=>({...p,type:'country',country:p.name,aliases:p.en,description:'国・地域名の表示位置です。首都の位置ではありません。'})),...points];
-export const normalize=s=>s.normalize('NFKC').toLowerCase().replace(/[・\s.。ー\-]/g,'');
-export function findPlaces(query='',type='all'){const q=normalize(query);return places.filter(p=>(type==='all'||p.type===type)&&normalize(p.name+p.country+p.aliases).includes(q));}
+
+const countryById=new Map(countries.map(c=>[c.id,c]));
+const countryNames=ids=>ids.map(id=>countryById.get(id)?.name||id).join('・');
+const kinds={ancient:'歴史のある場所',monument:'記念する建物',sacred:'お寺や教会など',beach:'海辺',waterfall:'滝',cave:'どうくつ',volcanic:'山や火山',natural:'自然の見どころ',tower:'タワー',structure:'建物や橋',castle:'お城',military:'歴史のある場所',abandoned:'昔の建物',macabre:'歴史のある場所',museum:'博物館',garden:'庭や公園',leisure:'楽しむ場所'};
+export const attractions=tourismData.map(([qid,name,en,countryId,lat,lon,kind])=>({id:'tourist-'+qid,qid,name,en,countryId,country:countryNames([countryId]),aliases:en,type:'landmark',lat,lon,description:`${countryNames([countryId])}にある${kinds[kind]||'見どころ'}です。`,source:`https://www.wikidata.org/wiki/${qid}`}));
+export const heritage=heritageData.map(([unescoId,name,en,countryIds,lat,lon,year,category,qid,components,coordinateSource])=>({id:'heritage-'+unescoId,unescoId,qid,name,en,countryIds,country:countryNames(countryIds),aliases:en,type:'heritage',lat,lon,year,category,components,coordinateSource,description:`${year}年に世界遺産に登録された${({Cultural:'文化遺産',Natural:'自然遺産',Mixed:'複合遺産'})[category]}です。${components>1?'いくつかの場所からなるため、代表の1か所を表示しています。':''}`,source:`https://whc.unesco.org/en/list/${unescoId}/`}));
+export const points=[...capitals,...attractions,...heritage];
+const readings={'日本':'にほん にっぽん','中国':'ちゅうごく','韓国':'かんこく','台湾':'たいわん','北朝鮮':'きたちょうせん','南アフリカ':'みなみあふりか','富士山':'ふじさん','清水寺':'きよみずでら','金閣寺':'きんかくじ','姫路城':'ひめじじょう','万里の長城':'ばんりのちょうじょう','エッフェル塔':'えっふぇるとう'};
+export const places=[...countries.map(p=>({...p,type:'country',country:p.name,aliases:p.en,description:'国や地域の名前を表示する場所です。首都の場所とはちがいます。'})),...points];
+export const normalize=s=>String(s).normalize('NFKC').toLowerCase().replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-0x60)).replace(/[・\s.。ー\-]/g,'');
+const searchIndex=new Map(places.map(p=>[p.id,normalize([p.name,p.country,p.aliases,readings[p.name]||'',...p.country.split('・').map(c=>readings[c]||'')].join(' '))]));
+export function findPlaces(query='',type='all'){const q=normalize(query);return places.filter(p=>(type==='all'||p.type===type)&&searchIndex.get(p.id).includes(q));}
 export function position(lat,lon,r=.15){const a=lat*Math.PI/180,b=lon*Math.PI/180;return [r*Math.cos(a)*Math.cos(b),r*Math.sin(a),-r*Math.cos(a)*Math.sin(b)];}
